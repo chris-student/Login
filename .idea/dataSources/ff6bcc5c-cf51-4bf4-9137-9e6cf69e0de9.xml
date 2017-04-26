@@ -29,22 +29,17 @@
     </column>
     <column id="10" parent="4" name="name">
       <DataType>VARCHAR(20)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="11" parent="4" name="pass">
       <Position>1</Position>
-      <DataType>VARCHAR(20)|0</DataType>
+      <DataType>CHAR(60)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="12" parent="4" name="sqlite_autoindex_users_1">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="13" parent="4" name="users_name_uindex">
-      <ColNames>name</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="14" parent="4">
+    <key id="13" parent="4">
       <ColNames>name</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_users_1</UnderlyingIndexName>

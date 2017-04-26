@@ -44,7 +44,7 @@ public class UserData {
     }
 
     public User retrieveUser(String name) throws SQLException {
-        User user = null;
+        User user;
         try {
             connect = DriverManager.getConnection("jdbc:sqlite:D:\\Code\\Login\\src\\login\\login.sqlite");
             statement = connect.prepareStatement("SELECT * FROM users " +
