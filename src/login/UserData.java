@@ -29,7 +29,7 @@ public class UserData {
 
     public void createUser(User user) throws SQLException {
         try {
-            connect = DriverManager.getConnection("jdbc:sqlite:D:\\Code\\Login\\src\\login\\login.sqlite");
+            connect = DriverManager.getConnection("jdbc:sqlite:login.sqlite");
             statement = connect.prepareStatement("INSERT INTO users " +
                     "VALUES (?, ?);");
             statement.setString(1, user.getName());
@@ -46,7 +46,7 @@ public class UserData {
     public User retrieveUser(String name) throws SQLException {
         User user;
         try {
-            connect = DriverManager.getConnection("jdbc:sqlite:D:\\Code\\Login\\src\\login\\login.sqlite");
+            connect = DriverManager.getConnection("jdbc:sqlite:login.sqlite");
             statement = connect.prepareStatement("SELECT * FROM users " +
                     "WHERE name = ?;");
             statement.setString(1, name);
@@ -69,7 +69,7 @@ public class UserData {
     public List<User> retrieveAllUsers() throws SQLException {
         List<User> users = new ArrayList<>();
         try {
-            connect = DriverManager.getConnection("jdbc:sqlite:D:\\Code\\Login\\src\\login\\login.sqlite");
+            connect = DriverManager.getConnection("jdbc:sqlite:login.sqlite");
             statement = connect.prepareStatement("SELECT * FROM users;");
 
             rs = statement.executeQuery();
